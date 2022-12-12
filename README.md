@@ -1,11 +1,13 @@
-# Employee-Review-System-ERS-
+# Employee-Review-System (ERS)
+Live: https://ill-outfit-lion.cyclic.app/
+
 ## Description 
   A portal where employees can review each other. There are two types of users - Employee and an Admin. The admins are responsible for assigning the reviews, i.e. admins decide who will review whom.
   The admin have special rights, such as
-  -Register a new employee
-  -Remove an employee (only non-admin employees)
-  -Assign performance reviews (who will review whom)
-  -Give admin rights, to a non-admin employee.
+  * Register a new employee
+  * Remove an employee (only non-admin employees)
+  * Assign performance reviews (who will review whom)
+  * Give admin rights, to a non-admin employee.
   
 # Getting Started
   1. git clone https://github.com/anuragDeol/Employee-Review-System-ERS-.git
