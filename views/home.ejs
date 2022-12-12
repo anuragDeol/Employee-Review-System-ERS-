@@ -1,0 +1,51 @@
+<div class="bg-secondary" id="body-container" class="row" style="display:flex; justify-content:center; height: 100vh">
+    <div class="col-md-4" style="background-color: rgb(99,108,115); margin: 2% 2% 0 0; border-radius: 15px; height: 70vh; overflow: auto;">
+        <div class="text-white border-bottom">
+            <div class="mx-auto" style="width: 200px;">
+                <h1>You need to Review Following</h1>
+            </div>
+        </div>
+        <div>
+            <% if(recipients && recipients.length>0) { %>
+                <% for(let r of recipients){ %>
+                    <%if(r) { %>
+                    <div class="card no-b" style="border-radius: 0px;">
+                        <div class="card-body">
+                        <form action="/reviews/newReview/<%= r._id %>" method="get">
+                            <textarea class="form-control" placeholder="Leave a review for <%= r.name %> here" id="floatingTextarea2" style="height: 100px" name="newReview" rows="5" required></textarea>
+                            <div class="mt-3">
+                                <button type="submit" class="btn text-light" style="background-color: rgb(99,108,115)">Submit </button>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                    <% } %>
+                <% } %>
+            <% } else { %>
+                <div style="display: flex; justify-content: center; margin-top: 5%; color: rgb(190, 193, 195)"><h4>Assigned reviews will be visible here</h4></div>
+            <% } %>
+        </div>
+    </div>
+        <div class="col-md-4" style="background-color: white; margin: 2% 2% 0 0; border-radius: 15px; height: 70vh; overflow: auto;">
+        
+        <div class="text-white border-bottom border-dark" style="background-color: rgb(99,108,115)">
+            <div class="mx-auto" style="width: 250px;">
+                <h1>Your performance reviews</h1>
+            </div>
+        </div>
+        <div >
+            <% if(reviews && reviews.length>0) { %>
+                <% for(let i = 0; i < reviews.length; i++) { %>
+                    <div class="card" style="border-radius: 0px;">
+                        <div class="card-body">
+                        <span class="card-text"><%= reviews[i].name %>: <%= reviews[i].review %></span>
+                        </form>
+                        </div>
+                    </div>
+                <% } %>
+            <% } else { %>
+                <div style="display: flex; justify-content: center; margin-top: 5%; color: rgb(190, 193, 195)"><h4>No one reviewed you yet</h4></div>
+            <% } %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<nav class="nav d-flex justify-content-between" style="background-color:rgb(79, 86, 92); font-family: bahnschrift">
+    <div class="d-flex">
+        <% if(locals.user){ %>
+            <span class="nav-link text-light">Hello! <b><%= locals.user.name %></b></span>
+        <% } %>
+    </div>
+    <div style="font-family: bahnschrift;  position: fixed; left: 42%; top: 0; background-color: rgb(79, 86, 92); font-size: 1rem;">
+        <span class="nav-link text-white text-uppercase"><a href="/" style="text-decoration:none; color: whitesmoke; text-shadow: 1px 1px 1px lavender, 0 0 0em lavender, 0 0 0.1em lavender;">Employee Review System</a></span>
+    </div>
+    <div class="d-flex">
+        <a class="nav-link active text-light" aria-current="page" href="/">Home</a>
+        <% if(locals.user && !locals.user.isAdmin){ %>
+            <a class="nav-link text-light" href="/users/logout">Log Out</a>
+        <% }else if(locals.user && locals.user.isAdmin){ %>
+            <a class="nav-link" href="/admin/admin-page" style="color: rgb(255, 161, 28)">Admin Page</a>
+            <a class="nav-link text-light" href="/admin/view-employees">Employees</a>
+            <a class="nav-link text-light" href="/users/register">Register</a>
+            <a class="nav-link text-light" href="/users/logout">Log Out</a>
+        <% }else{ %>
+            <a class="nav-link text-light" href="/users/login">Log In</a>
+            <a class="nav-link text-light" href="/users/register">Register</a>
+        <% } %>
+    </div>
+  </nav>

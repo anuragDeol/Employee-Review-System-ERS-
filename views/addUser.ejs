@@ -1,0 +1,48 @@
+<section class="bg-secondary gradient-custom" style="height: 100vh">
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-light text-dark" style="border-radius: 1rem">
+          <div class="card-body text-center">
+            <div class=" mt-md-4">
+              <h2 class="fw-bold mb-2 text-uppercase">Add new user</h2>
+              <h6>You are <u>admin</u>. You can add a new <i>User</i>.</h6>
+              
+              <form action="/users/create-user" method="post">
+              
+                <div class="form-outline form-white mb-4 mt-4">
+                    <input type="text" id="name" name="name" class="form-control form-control-lg" placeholder="Name"/>
+                </div>
+                <div class="form-outline form-white mb-4 mt-4">
+                <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="Email"/>
+               
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Password"/>
+                
+              </div>
+              <div class="form-outline form-white mb-4">
+                <input type="password" id="pass" name="password2" class="form-control form-control-lg" placeholder="Confirm Password"/>
+                
+              </div>
+
+              <button class="btn btn-outline-dark btn-lg px-5" type="submit">
+                Add User
+              </button>
+
+              <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
+              </div>
+            </div>
+
+            
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

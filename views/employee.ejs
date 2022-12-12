@@ -1,0 +1,48 @@
+<div class="bg-secondary">
+  <h3 class="text-center text-light pt-3" style="font-family: sans-serif">
+    <b>List of all the employees</b>
+    <br>
+    <small style="font-size: 0.8rem; font-family:system-ui">(NOTE: AN ADMIN CAN <span style="color:rgb(253, 136, 136); ">NOT</span> REMOVE OTHER ADMINS)</small>
+  </h3>
+
+  <div class="container bg-secondary" style="font-family: sans-serif; height: 100vh;">
+    <table class="table table-hover text-shadow" style="background-color: rgb(99, 108, 115);">
+      <thead>
+        <tr class="text-light" style="border: 10px solid rgb(108,117,125); background-color: rgb(93, 101, 108)">
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Admin</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% for(let i=0; i<employees.length; i++){ %>
+        <tr class="text-light" style="border: 10px solid rgb(108,117,125); ">
+          <td><%=employees[i].name %></td>
+          <td><%=employees[i].email %></td>
+          <td>
+            <%if(employees[i].isAdmin) { %>
+                <span>Yes</span>
+            <% } else { %>
+                <span>No</span>
+            <% } %>
+          </td>
+          <td>
+            <% if(!employees[i].isAdmin) { %>
+                <a href="/admin/delete-employee/<%=employees[i]._id%>" class="btn btn-danger" style="border-radius: 50px">
+                  Remove
+                </a>
+              <% } %>
+              <% if(employees[i]._id == locals.user.id) { %>
+                <a href="/admin/delete-employee/<%=employees[i]._id%>" class="btn btn-danger" style="font-size:0.75rem; padding: 4% 3%; border-radius: 50px">
+                  Remove <small>(you)</small>
+                </a>
+              <% } %>
+          </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</div>
